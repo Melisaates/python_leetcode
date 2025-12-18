@@ -54,6 +54,7 @@ class Solution(object):
         :type s: str  
         :rtype: str
         """
+        
         def expand(left, right):
             while left >= 0 and right < len(s) and s[left] == s[right]:
                 left -= 1
@@ -70,6 +71,7 @@ class Solution(object):
             if len(even_palindrome) > len(longest):
                 longest = even_palindrome
         return longest  
+    
 # 1.way using list
 
 
