@@ -1,3 +1,4 @@
+# 1.way using list
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
