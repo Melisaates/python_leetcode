@@ -4,27 +4,37 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        right = len(s) -1
         left = 0
-        subString =[]
-        longestSub = []
+        right = 0
+        subString = []
+        longest = 0
 
-        while left < right:
-            if not s[left] in subString:
-                subString.append(s[left])
-                left +=1
-                
+        while right < len(s):
+            if s[right] not in subString:
+                subString.append(s[right])
+                longest = max(longest, len(subString))
+                right += 1
             else:
-                if len(longestSub) < len(subString):
-                    longestSub = subString
-                subString = [] 
-                subString.append(s[left])
+                subString.pop(0)
+                left += 1
+        return longest
 
-        return len(longestSub)
-           
+# 2.way using set for better performance
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        left = 0
+        right = 0
+        seen = set()
+        longest = 0
+        for right in range(len(s)):
+            while s[right] in seen :
+                seen.remove(s[left])
+                left += 1
+            seen.add(s[right])
+            longest = max(longest, right - left + 1)
+        return longest
             
-
-
-            
-
-
