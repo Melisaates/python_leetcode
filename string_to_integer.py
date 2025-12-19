@@ -7,6 +7,7 @@
 # or if no such sequence exists because either s is empty or it contains only whitespace characters, no conversion is performed.
 # 1.way
 # complexity O(n)
+#1h 34min
 class Solution(object):
     def myAtoi(self, s):
         """
