@@ -1,5 +1,6 @@
 # Roman to Integer
 # time complexity: O(1)
+# 30 minutes
 class Solution(object):
     def romanToInt(self, s):
         """
