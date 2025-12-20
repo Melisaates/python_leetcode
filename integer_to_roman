@@ -1,0 +1,62 @@
+# Integer to Roman
+# Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+# 1.way- Integer to Roman
+# time complexity: O(1)
+class Solution(object):
+    def intToRoman(self, num):
+        result_str = ""
+
+        while num > 0:
+            if num >= 1000 :
+                result_str += "M"
+                num -= 1000
+
+            elif num >= 900:
+                result_str += "CM"
+                num -= 900
+
+            elif num >= 500:
+                result_str += "D" 
+                num -= 500
+
+            elif num >= 400:
+                result_str += "CD"
+                num -= 400
+
+            elif num >= 100 :
+                result_str += "C"
+                num -= 100
+
+            elif num >= 90:
+                result_str += "XC"
+                num -= 90
+
+            elif num >= 50:
+                result_str += "L" 
+                num -= 50
+
+            elif num >= 40:             
+                result_str += "XL"
+                num -= 40
+
+            elif num >= 10 :
+                result_str += "X" 
+                num -= 10
+
+            elif num >= 9:
+                result_str += "IX"
+                num -= 9
+
+            elif num >= 5 :
+                result_str += "V" 
+                num -= 5
+
+            elif num >= 4:
+                result_str += "IV"
+                num -= 4
+
+            else:
+                result_str += "I"
+                num -= 1
+
+        return result_str
