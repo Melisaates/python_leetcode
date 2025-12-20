@@ -1,0 +1,67 @@
+# Roman to Integer
+# time complexity: O(1)
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        
+        result = 0
+        skip_next=False
+        for i in range(len(s)):
+            if skip_next:
+                skip_next=False
+                continue
+
+            if s[i] == "M":
+                result += 1000
+            elif s[i] == "I" and i!= len(s)-1:
+                if s[i+1] == "V":
+                    result += 4
+                    skip_next=True
+                elif s[i+1] == "X":
+                    result += 9
+                    skip_next=True
+                else:
+                    result+=1
+
+            elif s[i] == "X" and i!= len(s)-1:
+
+                if s[i+1] == "L":
+                    skip_next=True
+                    result += 40
+                elif s[i+1] == "C":
+                    skip_next=True
+                    result += 90
+                else:
+                    result+=10
+            elif s[i] == "C" and i!= len(s)-1:
+
+                if s[i+1] == "D":
+                    skip_next=True
+                    result += 400
+                elif s[i+1] == "M":
+                    skip_next=True
+                    result += 900
+
+                else:
+                    result += 100
+                    
+            elif s[i] == "D":
+                result += 500
+            elif s[i] == "C":
+                result += 100
+            elif s[i] == "L":
+                result += 50
+            elif s[i] == "X":
+                result += 10
+            elif s[i] == "V":
+                result += 5
+            else:
+                result += 1
+        return result
+            
+
+
+        
