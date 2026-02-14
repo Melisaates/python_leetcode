@@ -47,25 +47,25 @@ class Solution(object):
 
 # 2.way- Longest Common Prefix
 # time complexity: O(n*m) n is number of strings, m is length of the shortest string
-class Solution(object):
-    def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
-        if not strs:
-            return ""
+# class Solution(object):
+#     def longestCommonPrefix(self, strs):
+#         """
+#         :type strs: List[str]
+#         :rtype: str
+#         """
+#         if not strs:
+#             return ""
         
-        prefix = strs[0]
+#         prefix = strs[0]
         
-        # Check each string in the array
-        for s in strs[1:]:
-            # Reduce the prefix until it matches the start of the string
-            while not s.startswith(prefix):
-                # Shorten the prefix by one character
-                prefix = prefix[:-1]
-                if not prefix:
-                    return ""
+#         # Check each string in the array
+#         for s in strs[1:]:
+#             # Reduce the prefix until it matches the start of the string
+#             while not s.startswith(prefix):
+#                 # Shorten the prefix by one character
+#                 prefix = prefix[:-1]
+#                 if not prefix:
+#                     return ""
         
-        return prefix
+#         return prefix
     
